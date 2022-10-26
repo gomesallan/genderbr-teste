@@ -6,7 +6,7 @@ async function main(name:string) {
     // console.log(gender)
     return gender;
 }
-main('Douglas')
+main('cleide')
     .then(text => {
         console.log(text);
     })
