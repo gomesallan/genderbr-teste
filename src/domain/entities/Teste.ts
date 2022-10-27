@@ -1,7 +1,7 @@
 import { Entity } from '../../core/domain/Entity';
 import {Request, Response} from 'express';
 import { getGenderByName } from 'br-gender';
-import csv from '@fast-csv/parse'
+const csv = require('@fast-csv/parse')
 
 export type TesteProps = {
     param: string
@@ -21,9 +21,9 @@ export class Teste extends Entity<TesteProps> {
        // const gender = await getGenderByName(param, { percentage: false });/////////////
 
        let rows = [];
-        csv.parseFile("../../../CNPJ.csv")
-        .on('error', error => console.error(error))
-        .on('data', (row)  => {
+        csv.parseFile("./CNPJ.csv")
+        .on('error', (error:any) => console.error(error))
+        .on('data', (row:any)  => {
             rows.push(JSON.stringify(row[1]))
             console.log(JSON.stringify(row[1]))
             //console.log(JSON.stringify(row[30]).replace(/[^0-9\.]+/g, ''))
