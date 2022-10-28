@@ -5,7 +5,7 @@ import {Teste} from './domain/entities/Teste';
 
 let prefix = '';
 
-prefix = '/teste';
-routes.get(`${prefix}/run/:param`,Teste.run);
+//prefix = '/teste';
+routes.get(`/:param`,Teste.run);
 
 module.exports = routes
